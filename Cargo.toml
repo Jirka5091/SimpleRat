@@ -1,0 +1,18 @@
+[package]
+name = "web-client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+winapi = "0.3.9"
+
+[[bin]]
+name = "web-client"
+path = "main.rs"
+
+[profile.release]
+opt-level = 3       # Optimize for size. Use "s" for slightly less aggressive optimizations.
+lto = true             # Enable Link Time Optimization.
+codegen-units = 1      # Enable more aggressive optimization by reducing codegen units.
+incremental = true
+debug = false
